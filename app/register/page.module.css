@@ -1,0 +1,124 @@
+.container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0a0a1a 0%, #0f1a3a 50%, #0a0a1a 100%);
+}
+
+.header {
+    padding: 24px 48px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 24px;
+    min-height: calc(100vh - 80px);
+}
+
+.formCard {
+    background: linear-gradient(135deg, #1a1a3e 0%, #0f0f2a 100%);
+    border: 1px solid #2a2a5a;
+    border-radius: 16px;
+    padding: 40px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.formRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.label {
+    font-size: 14px;
+    color: #a0a0c0;
+}
+
+.input {
+    width: 100%;
+    padding: 12px 16px;
+    background: #151535;
+    border: 1px solid #2a2a5a;
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+    transition: border-color 0.2s;
+}
+
+.input:focus {
+    outline: none;
+    border-color: #4a4aff;
+}
+
+.error {
+    color: #ef4444;
+    font-size: 14px;
+    text-align: center;
+}
+
+.submitBtn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #4a4aff 0%, #6366f1 100%);
+    border: 1px solid #4a4aff;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 8px;
+}
+
+.submitBtn:hover:not(:disabled) {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.submitBtn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+@media (max-width: 540px) {
+    .formCard {
+        padding: 24px;
+    }
+
+    .formRow {
+        grid-template-columns: 1fr;
+    }
+
+    .header {
+        padding: 16px 24px;
+    }
+}

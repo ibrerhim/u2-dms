@@ -1,0 +1,138 @@
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.profileCard {
+    background: linear-gradient(135deg, #1a1a3e 0%, #151535 100%);
+    border: 1px solid #2a2a5a;
+    border-radius: 16px;
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Avatar */
+.avatarContainer {
+    margin-bottom: 24px;
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    background: #0a0a1a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatarIcon {
+    font-size: 36px;
+    opacity: 0.8;
+}
+
+/* User info */
+.userInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 32px;
+}
+
+.nameRow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.userIcon {
+    font-size: 16px;
+    opacity: 0.7;
+}
+
+.userName {
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+}
+
+.roleBadge {
+    background: #4a4aff;
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+}
+
+.adminBadge {
+    background: #22c55e;
+}
+
+/* Contact info */
+.contactInfo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.infoRow {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.infoIcon {
+    font-size: 16px;
+    margin-top: 2px;
+}
+
+.infoContent {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.infoLabel {
+    font-size: 12px;
+    color: #6b6b8a;
+}
+
+.infoValue {
+    font-size: 14px;
+    color: white;
+}
+
+/* Loading state */
+.loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    color: #a0a0c0;
+    gap: 16px;
+}
+
+.spinner {
+    width: 32px;
+    height: 32px;
+    border: 3px solid #2a2a5a;
+    border-top-color: #4a4aff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

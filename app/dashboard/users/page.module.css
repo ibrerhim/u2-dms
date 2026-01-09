@@ -1,0 +1,121 @@
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.tableContainer {
+    background: linear-gradient(135deg, #1a1a3e 0%, #151535 100%);
+    border: 1px solid #2a2a5a;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th {
+    text-align: left;
+    padding: 16px 20px;
+    background: #151535;
+    border-bottom: 1px solid #2a2a5a;
+    color: #6b6b8a;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.table td {
+    padding: 16px 20px;
+    border-bottom: 1px solid #1a1a3e;
+    color: #a0a0c0;
+    font-size: 14px;
+}
+
+.table tr:last-child td {
+    border-bottom: none;
+}
+
+.table tr:hover td {
+    background: rgba(74, 74, 255, 0.05);
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+    padding: 0 8px;
+}
+
+.pageBtn {
+    background: #1a1a3e;
+    border: 1px solid #2a2a5a;
+    border-radius: 6px;
+    padding: 10px 20px;
+    color: #a0a0c0;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.pageBtn:hover:not(:disabled) {
+    background: #252560;
+    border-color: #4a4aff;
+    color: white;
+}
+
+.pageBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.pageInfo {
+    color: #6b6b8a;
+    font-size: 14px;
+}
+
+/* Loading state */
+.loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    color: #a0a0c0;
+    gap: 16px;
+}
+
+.spinner {
+    width: 32px;
+    height: 32px;
+    border: 3px solid #2a2a5a;
+    border-top-color: #4a4aff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .tableContainer {
+        overflow-x: auto;
+    }
+
+    .table {
+        min-width: 700px;
+    }
+}

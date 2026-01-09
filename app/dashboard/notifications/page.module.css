@@ -1,0 +1,134 @@
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 600;
+    color: white;
+}
+
+.markReadBtn {
+    background: transparent;
+    border: 1px solid #2a2a5a;
+    border-radius: 6px;
+    padding: 8px 16px;
+    color: #a0a0c0;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.markReadBtn:hover {
+    background: #1a1a3e;
+    border-color: #4a4aff;
+    color: white;
+}
+
+.notificationsList {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.notificationItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px 20px;
+    background: #1a1a3e;
+    border: 1px solid #2a2a5a;
+    border-radius: 12px;
+    position: relative;
+    transition: all 0.2s;
+}
+
+.notificationItem:hover {
+    border-color: #3a3a7a;
+}
+
+.notificationItem.unread {
+    background: linear-gradient(135deg, #1a1a3e 0%, #252560 100%);
+    border-color: #4a4aff33;
+}
+
+.icon {
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.content {
+    flex: 1;
+}
+
+.message {
+    font-size: 14px;
+    color: white;
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.time {
+    font-size: 12px;
+    color: #6b6b8a;
+}
+
+.unreadDot {
+    width: 8px;
+    height: 8px;
+    background: #4a4aff;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 6px;
+}
+
+/* Empty state */
+.emptyState {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+    color: #6b6b8a;
+    text-align: center;
+}
+
+.emptyIcon {
+    font-size: 48px;
+    margin-bottom: 16px;
+    opacity: 0.5;
+}
+
+/* Loading state */
+.loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    color: #a0a0c0;
+    gap: 16px;
+}
+
+.spinner {
+    width: 32px;
+    height: 32px;
+    border: 3px solid #2a2a5a;
+    border-top-color: #4a4aff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,294 @@
+.container {
+    display: flex;
+    min-height: 100vh;
+    background: #000;
+    position: relative;
+}
+
+/* Mobile overlay */
+.overlay {
+    display: none;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 220px;
+    background: #0a0a1a;
+    border-right: 1px solid #1a1a3e;
+    display: flex;
+    flex-direction: column;
+    padding: 16px 0;
+    transition: transform 0.3s ease;
+}
+
+.sidebarHeader {
+    padding: 0 16px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menuTitle {
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+}
+
+.closeBtn {
+    display: none;
+    background: none;
+    border: none;
+    color: #a0a0c0;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+
+.closeBtn:hover {
+    color: white;
+}
+
+.userCard {
+    margin: 0 16px 24px;
+    padding: 16px;
+    background: linear-gradient(135deg, #2a2a5a 0%, #1a1a3e 100%);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.userName {
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+    margin-bottom: 4px;
+}
+
+.communityId {
+    font-size: 11px;
+    color: #6b6b8a;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 0 8px;
+    flex: 1;
+}
+
+.navItem {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    color: #a0a0c0;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.navItem:hover {
+    background: #1a1a3e;
+    color: white;
+}
+
+.navItemActive {
+    background: #1a1a3e;
+    color: white;
+}
+
+.navIcon {
+    font-size: 16px;
+    width: 20px;
+    text-align: center;
+}
+
+.navLabel {
+    flex: 1;
+}
+
+.sidebarFooter {
+    padding: 16px;
+    margin-top: auto;
+}
+
+.logoutBtn {
+    width: 100%;
+    padding: 10px;
+    background: #ef4444;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.logoutBtn:hover {
+    background: #dc2626;
+}
+
+/* Main content */
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: #000;
+    min-width: 0;
+}
+
+.mainHeader {
+    padding: 20px 32px;
+    background: linear-gradient(135deg, #0f1a3a 0%, #1a1a3e 100%);
+    border-bottom: 1px solid #1a1a3e;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Hamburger menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 32px;
+    height: 32px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+}
+
+.content {
+    flex: 1;
+    padding: 32px;
+    overflow-x: auto;
+}
+
+/* Loading state */
+.loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #0a0a1a;
+    color: #a0a0c0;
+    gap: 16px;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #2a2a5a;
+    border-top-color: #4a4aff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive - Tablet */
+@media (max-width: 768px) {
+    .overlay {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 40;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 50;
+        transform: translateX(-100%);
+    }
+
+    .sidebarOpen {
+        transform: translateX(0);
+    }
+
+    .closeBtn {
+        display: block;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .content {
+        padding: 16px;
+    }
+
+    .mainHeader {
+        padding: 16px 20px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 480px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .content {
+        padding: 12px;
+    }
+
+    .mainHeader {
+        padding: 12px 16px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .userCard {
+        padding: 12px;
+        margin: 0 12px 16px;
+    }
+
+    .navItem {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+
+    .logoutBtn {
+        padding: 8px;
+        font-size: 13px;
+    }
+}

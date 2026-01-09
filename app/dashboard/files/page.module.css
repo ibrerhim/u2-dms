@@ -1,0 +1,340 @@
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.uploadBtn {
+    background: #4a4aff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 24px;
+    transition: background 0.2s;
+}
+
+.uploadBtn:hover {
+    background: #5858ff;
+}
+
+.fileGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.fileCard {
+    background: linear-gradient(135deg, #1a1a3e 0%, #151535 100%);
+    border: 1px solid #2a2a5a;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.fileHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.fileName {
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+}
+
+.externalLink {
+    color: #6b6b8a;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.2s;
+}
+
+.externalLink:hover {
+    color: white;
+}
+
+.versionInfo {
+    font-size: 12px;
+    color: #6b6b8a;
+    margin-bottom: 16px;
+}
+
+.cardActions {
+    display: flex;
+    gap: 8px;
+}
+
+.viewBtn,
+.updateBtn {
+    flex: 1;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.viewBtn {
+    background: #2a2a5a;
+    border: 1px solid #3a3a7a;
+    color: white;
+}
+
+.viewBtn:hover {
+    background: #3a3a7a;
+}
+
+.updateBtn {
+    background: #4a4aff;
+    border: none;
+    color: white;
+}
+
+.updateBtn:hover {
+    background: #5858ff;
+}
+
+/* Empty state */
+.emptyState {
+    text-align: center;
+    padding: 60px 20px;
+    color: #6b6b8a;
+}
+
+/* Loading state */
+.loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    color: #a0a0c0;
+    gap: 16px;
+}
+
+.spinner {
+    width: 32px;
+    height: 32px;
+    border: 3px solid #2a2a5a;
+    border-top-color: #4a4aff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Modal styles */
+.modalBackdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal {
+    background: linear-gradient(135deg, #1a1a3e 0%, #0f0f2a 100%);
+    border: 1px solid #2a2a5a;
+    border-radius: 16px;
+    padding: 32px;
+    max-width: 450px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.closeBtn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: transparent;
+    border: none;
+    color: #a0a0c0;
+    cursor: pointer;
+    font-size: 24px;
+    line-height: 1;
+}
+
+.closeBtn:hover {
+    color: white;
+}
+
+.modalTitle {
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 24px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.formGroup label {
+    font-size: 14px;
+    color: #a0a0c0;
+}
+
+.formGroup input[type="text"],
+.formGroup input[type="file"] {
+    padding: 12px 16px;
+    background: #151535;
+    border: 1px solid #2a2a5a;
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+}
+
+.formGroup input[type="text"]:focus {
+    outline: none;
+    border-color: #4a4aff;
+}
+
+.formGroup input[type="file"] {
+    cursor: pointer;
+}
+
+.formGroup input[type="file"]::file-selector-button {
+    background: #2a2a5a;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    margin-right: 12px;
+}
+
+.submitBtn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #4a4aff 0%, #6366f1 100%);
+    border: 1px solid #4a4aff;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 8px;
+}
+
+.submitBtn:hover:not(:disabled) {
+    opacity: 0.9;
+}
+
+.submitBtn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Versions list */
+.versionsList {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.versionItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background: #151535;
+    border-radius: 8px;
+}
+
+.versionInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.versionName {
+    font-size: 14px;
+    color: white;
+}
+
+.versionDate {
+    font-size: 12px;
+    color: #6b6b8a;
+}
+
+.versionActions {
+    display: flex;
+    gap: 8px;
+}
+
+.downloadBtn,
+.revertBtn {
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.downloadBtn {
+    background: #2a2a5a;
+    border: none;
+    color: white;
+}
+
+.downloadBtn:hover {
+    background: #3a3a7a;
+}
+
+.revertBtn {
+    background: transparent;
+    border: 1px solid #ef4444;
+    color: #ef4444;
+}
+
+.revertBtn:hover {
+    background: #ef4444;
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .fileGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .fileGrid {
+        grid-template-columns: 1fr;
+    }
+}
