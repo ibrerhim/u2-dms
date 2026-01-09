@@ -8,17 +8,15 @@ import styles from './page.module.css';
 
 export default function Home() {
   const [showLoginModal, setShowLoginModal] = useState(false);
-  const { data: session, status } = useSession();
+  const { status } = useSession();
   const router = useRouter();
 
-  // Redirect to dashboard if already logged in
   useEffect(() => {
     if (status === 'authenticated') {
       router.push('/dashboard');
     }
   }, [status, router]);
 
-  // Show loading while checking auth or redirecting
   if (status === 'loading' || status === 'authenticated') {
     return null;
   }
@@ -51,7 +49,7 @@ export default function Home() {
         <div className={styles.heroContent}>
           {/* Tabs */}
           <div className={styles.tabs}>
-            <button className={`${styles.tab} ${styles.tabActive}`}>
+            <button className={styles.tabActive}>
               get started
             </button>
             <button className={styles.tabLink} onClick={handleLoginClick}>
@@ -69,7 +67,7 @@ export default function Home() {
           {/* Description */}
           <p className={styles.description}>
             this system allows users to seamlessly manage and modify their
-            document and also allows reverting to previous document versions .
+            documment and also allows reverting to previous document versions .
           </p>
 
           {/* CTA Button */}
@@ -84,14 +82,16 @@ export default function Home() {
           <div className={styles.deviceContainer}>
             {/* Laptop */}
             <div className={styles.laptop}>
-              <div className={styles.laptopScreen}>
-                <div className={styles.screenContent}>
-                  <div className={styles.screenHeader}></div>
-                  <div className={styles.screenCircle}></div>
-                  <div className={styles.screenLines}>
-                    <div className={styles.screenLine}></div>
-                    <div className={styles.screenLine}></div>
-                    <div className={styles.screenLine}></div>
+              <div className={styles.laptopFrame}>
+                <div className={styles.laptopScreen}>
+                  <div className={styles.laptopTopBar}></div>
+                  <div className={styles.laptopContent}>
+                    <div className={styles.laptopCircle}></div>
+                    <div className={styles.laptopLines}>
+                      <div className={styles.laptopLine}></div>
+                      <div className={styles.laptopLine}></div>
+                      <div className={styles.laptopLine}></div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -122,11 +122,13 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Decorative elements */}
-            <div className={styles.decorCircle1}></div>
-            <div className={styles.decorCircle2}></div>
+            {/* Bottom Circle */}
+            <div className={styles.bottomCircle}></div>
+
+            {/* Decorative squares */}
             <div className={styles.decorSquare1}></div>
             <div className={styles.decorSquare2}></div>
+            <div className={styles.decorSquare3}></div>
           </div>
         </div>
       </main>

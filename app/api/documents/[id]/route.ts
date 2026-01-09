@@ -78,12 +78,14 @@ export async function PUT(request: NextRequest, { params }: RouteParams) {
         const uploadResult = await uploadFile(buffer, `u2-dms/${userId}`);
 
         const versionId = generateVersionId();
-        const finalVersionName = versionName || 'Unnamed Version';
+        const versionNumber = document.versions.length + 1; // Auto-increment
+        const versionLabel = versionName || `Version ${versionNumber}`; // User's name becomes label
 
         // Add new version
         document.versions.push({
             versionId,
-            versionName: finalVersionName,
+            versionName: `v${versionNumber}`,
+            versionLabel,
             cloudinaryId: uploadResult.public_id,
             cloudinaryUrl: uploadResult.secure_url,
             format: uploadResult.format,
@@ -91,13 +93,13 @@ export async function PUT(request: NextRequest, { params }: RouteParams) {
             createdAt: new Date(),
         });
 
-        document.currentVersionName = finalVersionName;
+        document.currentVersionName = `v${versionNumber}`;
         await document.save();
 
         // Create notification
         await Notification.create({
             userId,
-            message: `New version "${finalVersionName}" added to "${document.name}"`,
+            message: `New version v${versionNumber} added to "${document.name}"`,
             type: 'version',
             documentId: document._id,
         });

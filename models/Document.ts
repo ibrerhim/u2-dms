@@ -3,6 +3,7 @@ import mongoose, { Schema, Document, Model } from 'mongoose';
 export interface IDocumentVersion {
     versionId: string;
     versionName: string;
+    versionLabel?: string;
     cloudinaryId: string;
     cloudinaryUrl: string;
     format: string;
@@ -28,7 +29,11 @@ const DocumentVersionSchema = new Schema<IDocumentVersion>(
         },
         versionName: {
             type: String,
-            default: 'Unnamed Version',
+            default: 'v1',
+        },
+        versionLabel: {
+            type: String,
+            default: '',
         },
         cloudinaryId: {
             type: String,

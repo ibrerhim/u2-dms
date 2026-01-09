@@ -73,17 +73,19 @@ export async function POST(request: NextRequest) {
         const uploadResult = await uploadFile(buffer, `u2-dms/${userId}`);
 
         const versionId = generateVersionId();
-        const finalVersionName = versionName || name;
+        const versionNumber = 1; // First version
+        const versionLabel = name; // User's document name becomes the version label
 
         // Create document with first version
         const document = await DocumentModel.create({
             name,
             userId,
-            currentVersionName: finalVersionName,
+            currentVersionName: `v${versionNumber}`,
             versions: [
                 {
                     versionId,
-                    versionName: finalVersionName,
+                    versionName: `v${versionNumber}`,
+                    versionLabel,
                     cloudinaryId: uploadResult.public_id,
                     cloudinaryUrl: uploadResult.secure_url,
                     format: uploadResult.format,
